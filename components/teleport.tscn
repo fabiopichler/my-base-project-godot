@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7eug8r7hkphr"]
+
+[ext_resource type="Script" uid="uid://bw5g5rot7ia1y" path="res://components/teleport.gd" id="1_bbqw1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wot3d"]
+albedo_color = Color(0, 0.898039, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iqgl0"]
+material = SubResource("StandardMaterial3D_wot3d")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kygfw"]
+
+[node name="Teleport" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 0.144537, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_iqgl0")
+script = ExtResource("1_bbqw1")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_kygfw")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

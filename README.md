@@ -1,2 +1,2 @@
-# my-base-project-godot
-Meu projeto base para Godot
+# My Base Project - Godot
+Um projeto simples e básico, uma base para criar outros projetos com a Godot.

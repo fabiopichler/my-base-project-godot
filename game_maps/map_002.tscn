@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0utmuy00ro52"]
+
+[ext_resource type="Script" uid="uid://xa7h8cg3tpo2" path="res://game_maps/map_002.gd" id="1_t3nut"]
+[ext_resource type="PackedScene" uid="uid://b7eug8r7hkphr" path="res://components/teleport.tscn" id="2_6yobw"]
+[ext_resource type="PackedScene" uid="uid://bao7l54aqsgkf" path="res://components/world_light_environment.tscn" id="2_skore"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tetog"]
+albedo_color = Color(0, 0, 0.619608, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t3nut"]
+material = SubResource("StandardMaterial3D_tetog")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tetog"]
+
+[node name="Map002" type="Node3D"]
+transform = Transform3D(1.6336, 0, 0, 0, 1, 0, 0, 0, 1.52853, 0, 0, 0)
+script = ExtResource("1_t3nut")
+
+[node name="WorldLightEnvironment" parent="." instance=ExtResource("2_skore")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.44551, 0, 0, 0, 0.0520086, 0, 0, 0, 2.74351, 0, 0, 0)
+mesh = SubResource("BoxMesh_t3nut")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_tetog")
+
+[node name="Teleport" parent="." instance=ExtResource("2_6yobw")]
+transform = Transform3D(0.456016, 0, 0, 0, 0.144537, 0, 0, 0, 0.540387, -0.704137, 0.146142, -1.02851)
+to_map = "map_001"
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.043)
