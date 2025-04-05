@@ -15,7 +15,7 @@ func init(_main_scene, _main_scene_display, _color_rect_fade):
 
 func load_scene(scene_name : String):
 	if is_instance_valid(scene_instance):
-		await fade_in()
+		await fade_out()
 	
 	unload_scene()
 	
@@ -28,7 +28,7 @@ func load_scene(scene_name : String):
 		scene_instance = scene_resource.instantiate()
 		main_scene_display.add_child(scene_instance)
 		
-		await fade_out()
+		await fade_in()
 
 
 func unload_scene():
@@ -42,12 +42,12 @@ func fade_in(duration: float = 0.25):
 	var tween: Tween = main_scene.create_tween().set_parallel(true)
 	
 	color_rect_fade.visible = true
-	color_rect_fade.modulate.a = 0
+	color_rect_fade.modulate.a = 1
 	
 	tween.tween_property(
 		color_rect_fade,
 		"modulate:a",
-		1,
+		0,
 		duration
 	)
 	
@@ -61,12 +61,12 @@ func fade_out(duration: float = 0.25):
 	var tween: Tween = main_scene.create_tween().set_parallel(true)
 	
 	color_rect_fade.visible = true
-	color_rect_fade.modulate.a = 1
+	color_rect_fade.modulate.a = 0
 	
 	tween.tween_property(
 		color_rect_fade,
 		"modulate:a",
-		0,
+		1,
 		duration
 	)
 	
