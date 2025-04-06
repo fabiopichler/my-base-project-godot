@@ -29,6 +29,7 @@ shape = SubResource("BoxShape3D_k02oa")
 [node name="Teleport" parent="." instance=ExtResource("1_wot3d")]
 transform = Transform3D(0.866218, 0, 0, 0, 0.144537, 0, 0, 0, 0.847087, 0.979796, 0.146142, -1.09197)
 to_map = "map_002"
+fade = 1
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.35691)
