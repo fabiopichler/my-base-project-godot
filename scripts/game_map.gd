@@ -8,8 +8,6 @@ var map_instance : Node3D = null
 
 
 func load_map(map_name : String):
-	#await Scene.fade_out()
-	
 	unload_map()
 	
 	var map_path := "res://game_maps/%s.tscn" % map_name
@@ -20,8 +18,6 @@ func load_map(map_name : String):
 	if map_resource:
 		map_instance = map_resource.instantiate()
 		main_3d.add_child(map_instance)
-		
-		#await Scene.fade_in()
 
 
 func unload_map():

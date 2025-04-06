@@ -8,13 +8,13 @@ enum Fade {
 }
 
 
-var main_scene = null
-var main_scene_display = null
+var main_scene: Node = null
+var main_scene_display: Node = null
 var color_rect_fade: ColorRect = null
 var scene_instance: Node = null
 
 
-func init(_main_scene, _main_scene_display, _color_rect_fade):
+func init(_main_scene: Node , _main_scene_display: Node , _color_rect_fade: ColorRect):
 	main_scene = _main_scene
 	main_scene_display = _main_scene_display
 	color_rect_fade = _color_rect_fade
