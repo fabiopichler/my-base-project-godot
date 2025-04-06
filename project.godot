@@ -22,6 +22,11 @@ config/icon="res://icon.svg"
 Scene="*res://scripts/scene.gd"
 GameMap="*res://scripts/game_map.gd"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
