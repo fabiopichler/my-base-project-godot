@@ -10,13 +10,15 @@ enum Fade {
 
 var main_scene: Node = null
 var main_scene_display: Node = null
+var margin_container_fade: Node = null
 var color_rect_fade: ColorRect = null
 var scene_instance: Node = null
 
 
-func init(_main_scene: Node , _main_scene_display: Node , _color_rect_fade: ColorRect):
+func init(_main_scene: Node, _main_scene_display: Node, _margin_container_fade: Node, _color_rect_fade: ColorRect):
 	main_scene = _main_scene
 	main_scene_display = _main_scene_display
+	margin_container_fade = _margin_container_fade
 	color_rect_fade = _color_rect_fade
 
 
@@ -62,8 +64,8 @@ func make_fade(fade: Fade, duration: float, color_in: Color, color_out: Color):
 	else:
 		color_rect_fade.color = Color.BLACK
 	
-	color_rect_fade.visible = true
 	color_rect_fade.modulate = color_in
+	margin_container_fade.visible = true
 	
 	var tween: Tween = main_scene.create_tween().set_parallel(true)
 	
@@ -77,4 +79,4 @@ func make_fade(fade: Fade, duration: float, color_in: Color, color_out: Color):
 	tween.play()
 	await tween.finished
 	
-	color_rect_fade.visible = false
+	margin_container_fade.visible = false

@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://bheyt7jb5y2uo" path="res://scenes/scene_intro.gd" id="1_avwnj"]
 [ext_resource type="Texture2D" uid="uid://cifbnwfjxx4" path="res://icon.svg" id="1_exbdb"]
 
-[node name="SceneIntro" type="Control"]
-layout_mode = 3
+[node name="SceneIntro" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,9 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_avwnj")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
